@@ -76,7 +76,7 @@ function TabPanel({ tab, onBack }: { tab: Exclude<Tab, 'Hoy' | 'Yo'>; onBack: ()
 function BodyVisual({ body, symptoms, setSymptoms }: { body: { energy: string; sleep: string; symptoms: string }; symptoms: VitalSymptom[]; setSymptoms: (next: SetStateAction<VitalSymptom[]>) => void }) {
   const [view, setView] = useState<'front' | 'back'>('front')
   const [layer, setLayer] = useState<'muscles' | 'skeleton' | 'organs'>('muscles')
-  const [healthState, setHealthState] = useState<'none' | 'alert' | 'calm'>('alert')
+  const [healthState, setHealthState] = useState<'none' | 'alert' | 'calm'>('none')
   const [selectedZone, setSelectedZone] = useState('')
   const [composerOpen, setComposerOpen] = useState(false)
   const [intensity, setIntensity] = useState('leve')
