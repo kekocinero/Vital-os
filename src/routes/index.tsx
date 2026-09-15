@@ -29,7 +29,7 @@ function Home() {
   const filtered = useMemo(() => featureCards.filter(card => `${card.title} ${card.text}`.toLowerCase().includes(query.toLowerCase())), [query])
 
   return (
-    <main className="min-h-dvh overflow-hidden bg-background">
+    <main suppressHydrationWarning className="min-h-dvh overflow-hidden bg-background">
       <header className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
         <Link to="/" className="flex items-center gap-3" aria-label="VITAL OS inicio">
           <span className="grid size-11 place-items-center rounded-full bg-primary text-primary-foreground shadow-md">
