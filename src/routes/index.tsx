@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Activity, ArrowRight, ChevronRight, HeartPulse, Leaf, LockKeyhole, Menu, Search, ShieldCheck, Sparkles, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { BlinkClientBoundary } from '@/components/BlinkClientBoundary'
 
 const featureCards = [
   { icon: HeartPulse, title: 'Tu salud, en un solo lugar', text: 'Medicaciones, citas, informes y síntomas. Sin perderte entre papeles.' },
@@ -23,6 +24,14 @@ export const Route = createFileRoute('/')({
 })
 
 function Home() {
+  return <BlinkClientBoundary fallback={<LandingLoading />}><HomeContent /></BlinkClientBoundary>
+}
+
+function LandingLoading() {
+  return <main suppressHydrationWarning className="grid min-h-dvh place-items-center bg-background"><div suppressHydrationWarning className="text-center"><span suppressHydrationWarning className="mx-auto grid size-14 place-items-center rounded-full bg-primary text-primary-foreground"><Leaf className="size-7" /></span><p suppressHydrationWarning className="mt-4 font-serif text-2xl text-primary">VITAL</p><p suppressHydrationWarning className="mt-2 text-sm text-muted-foreground">Preparando tu espacio...</p></div></main>
+}
+
+function HomeContent() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')

@@ -192,7 +192,7 @@ export const Route = createFileRoute('/app/')({
 })
 
 function VitalAppRoute() { return <BlinkClientBoundary fallback={<AppLoading />}><VitalApp /></BlinkClientBoundary> }
-function AppLoading() { return <main className="grid min-h-dvh place-items-center bg-background"><div className="text-center"><span className="mx-auto grid size-14 place-items-center rounded-full bg-primary text-primary-foreground"><Leaf className="size-7" /></span><p className="mt-4 font-serif text-2xl text-primary">VITAL</p><p className="mt-2 text-sm text-muted-foreground">Preparando tu espacio...</p></div></main> }
+function AppLoading() { return <main suppressHydrationWarning className="grid min-h-dvh place-items-center bg-background"><div suppressHydrationWarning className="text-center"><span suppressHydrationWarning className="mx-auto grid size-14 place-items-center rounded-full bg-primary text-primary-foreground"><Leaf className="size-7" /></span><p suppressHydrationWarning className="mt-4 font-serif text-2xl text-primary">VITAL</p><p suppressHydrationWarning className="mt-2 text-sm text-muted-foreground">Preparando tu espacio...</p></div></main> }
 
 function VitalApp() {
   const [activeTab, setActiveTab] = useState<Tab>('Hoy')
